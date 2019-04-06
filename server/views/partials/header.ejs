@@ -1,0 +1,124 @@
+    <!-- footer.js
+Rajandeep Kaur Dhaliwal
+300926123
+Feb 15 2019 -->
+    
+
+    <!--header section-->
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= title %></title>
+
+    <!--CSS Section -->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Content/app.css" />
+  </head>
+  <body>
+
+  
+<!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">
+      <span style="font-size: 72px; color: Tomato;">
+<i class="fa fa-registered fa-7x"></i>
+</span>
+      
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <% if(title=="Home Page"){ %>
+          <li class="nav-item active">
+            <% } else { %>
+          </li>
+
+          <li class="nav-item">
+            <% } %>
+
+            <a class="nav-link" href="/"
+              > <i class="fa fa-home"></i></i></i> Home Page</a>
+            
+          </li>
+
+          <% if(title=="About Me"){ %>
+          <li class="nav-item active">
+            <% } else { %>
+          </li>
+
+          <li class="nav-item">
+            <% } %>
+
+            <a class="nav-link" href="/about"
+              ><i class="fa fa-registered"></i></i> About Me</a>
+            
+          </li>
+
+          <% if(title=="Projects Page"){ %>
+          <li class="nav-item active">
+            <% } else { %>
+          </li>
+
+          <li class="nav-item">
+            <% } %>
+
+            <a class="nav-link" href="/products"
+              ><i class="fa fa-tasks"></i></i> Projects Page</a>
+            
+          </li>
+
+          <% if(title=="Services Page"){ %>
+          <li class="nav-item active">
+            <% } else { %>
+          </li>
+
+          <li class="nav-item">
+            <% } %>
+
+            <a class="nav-link" href="/services"
+              ><i class="fa fa-taxi"></i></i> Services Page</a>
+            
+          </li>
+
+          <% if(title=="Contact Me"){ %>
+          <li class="nav-item active">
+            <% } else { %>
+          </li>
+
+          <li class="nav-item">
+            <% } %>
+            <a class="nav-link" href="/contact"
+              ><i class="fa fa-phone-square"></i></i> Contact Me</a>
+            
+          </li>
+          <% if(typeof displayName == 'string' && displayName) { %>
+            <li class="navbar-text"><i class="fas fa-lg fa-user"></i> 
+              Welcome, <%= displayName %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link">
+              <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+          <% } else { %>
+            <li class="nav-item"><a href="/login" class="nav-link">
+              <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to <%= title%></h1>
