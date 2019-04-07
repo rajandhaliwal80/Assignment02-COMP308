@@ -29,7 +29,7 @@ export class ContactListComponent  implements OnInit {
 
   displayContactList(): void {
     this.contactListService.getList().subscribe(data => {
-      if(data.success) {
+      if (data.success) {
         console.log(data);
         this.contacts = data.contactList;
       } else {
