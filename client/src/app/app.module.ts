@@ -15,14 +15,19 @@ import { ServicesComponent } from './pages/services/services.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
-
-// Services
-import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
 import { ContactDeleteComponent } from './contacts/contact-delete/contact-delete.component';
 
+// Services
+import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
+import { AuthService } from './services/auth.service';
+import { JwtModule, JwtHelperService, JwtInterceptor } from '@auth0/angular-jwt';
+
+export function jwtTokenGetter() {
+  return localStorage.getItem('id_token');
+}
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import { ContactDeleteComponent } from './contacts/contact-delete/contact-delete
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter
+      }
+    })
   ],
   providers: [FlashMessagesService],
   bootstrap: [AppComponent]
