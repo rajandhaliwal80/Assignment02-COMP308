@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
@@ -12,7 +14,11 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ContactsComponent } from './pages/contacts/contacts.component';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+
+// Services
+import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +32,16 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
     ServicesComponent,
     ContactMeComponent,
     PageNotFoundComponent,
-    ContactsComponent
+    ContactListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

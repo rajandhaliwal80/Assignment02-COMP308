@@ -8,7 +8,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ContactsComponent } from './pages/contacts/contacts.component';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 
 
 const routes: Routes = [
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'products', component: ProductsComponent, data: {title: 'Projects'}},
   {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
   {path: 'contact', component: ContactMeComponent, data: {title: 'Contact'}},
-  {path: 'contact/contact-list', component: ContactsComponent, data: {title: 'Contact List'}},
+  {path: 'contact/contact-list', component: ContactListComponent, data: {title: 'Contact List'}},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
