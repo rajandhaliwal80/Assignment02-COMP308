@@ -1,27 +1,31 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 
-import { Contact } from '../models/contacts';
-import { User } from '../models/user';
+import { Contact } from "../models/contacts";
+import { User } from "../models/user";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ContactListService {
   private user: User;
   private authToken: any = null;
-  private endpoint = 'http://localhost:4000/api/contact-list/';
+  private endpoint =
+    "https://assignment2-rajandeep.herokuapp.com/api/contact-list/";
 
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers":
+        "Origin, X-Requested-With, Content-Type, Accept"
     })
   };
 
-  constructor(private http: HttpClient) { this.user = new User(); }
+  constructor(private http: HttpClient) {
+    this.user = new User();
+  }
 
   public getList(): Observable<any> {
     this.loadToken();
@@ -30,27 +34,44 @@ export class ContactListService {
 
   public getContact(contact: Contact): Observable<any> {
     this.loadToken();
-    return this.http.get<any>(this.endpoint + 'edit/' + contact._id, this.httpOptions);
+    return this.http.get<any>(
+      this.endpoint + "edit/" + contact._id,
+      this.httpOptions
+    );
   }
 
   public addContact(contact: Contact): Observable<any> {
     this.loadToken();
-    return this.http.post<any>(this.endpoint + 'add', contact, this.httpOptions);
+    return this.http.post<any>(
+      this.endpoint + "add",
+      contact,
+      this.httpOptions
+    );
   }
 
   public editContact(contact: Contact): Observable<any> {
     this.loadToken();
-    return this.http.post<any>(this.endpoint + 'edit/' + contact._id, contact, this.httpOptions);
+    return this.http.post<any>(
+      this.endpoint + "edit/" + contact._id,
+      contact,
+      this.httpOptions
+    );
   }
 
   public deleteContact(contact: Contact): Observable<any> {
     this.loadToken();
-    return this.http.get<any>(this.endpoint + 'delete/' + contact._id, this.httpOptions);
+    return this.http.get<any>(
+      this.endpoint + "delete/" + contact._id,
+      this.httpOptions
+    );
   }
 
   private loadToken() {
-    const token = localStorage.getItem('id_token');
+    const token = localStorage.getItem("id_token");
     this.authToken = token;
-    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
+    this.httpOptions.headers = this.httpOptions.headers.set(
+      "Authorization",
+      this.authToken
+    );
   }
 }
