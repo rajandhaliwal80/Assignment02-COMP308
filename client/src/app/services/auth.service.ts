@@ -12,7 +12,7 @@ export class AuthService {
   user: User;
   private authToken: any;
 
-  private endpoint = "https://assignment2-rajandeep.herokuapp.com/api/";
+  private endpoint = "http://localhost:4700/api/";
 
   private httpOptions = {
     headers: new HttpHeaders({
