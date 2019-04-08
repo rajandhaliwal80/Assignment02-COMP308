@@ -13,9 +13,18 @@ Centennial College <br/>
 
 rajandhaliwal80@gmail.com <br/></h5>
 
-
+<div *ngIf="isLoggedIn()" class="container">
+  <div class="row">
+    <div class="col col-md-6">
+      <div class="card">
+        <h5 class="card-header alert-success">Secure</h5>
+        <div class="card-body">
           <a class="btn btn-primary" routerLink="/contact/contact-list" role="button">Contact List</a>
-
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         <hr class="my-4" />
