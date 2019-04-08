@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+/*Name : Rajandeep Kaur Dhaliwal
+Student ID: 300926123
+Date: April 08, 2017*/
+
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-base-page',
-  templateUrl: './base-page.component.html',
-  styleUrls: ['./base-page.component.css']
+  selector: "app-base-page",
+  templateUrl: "./base-page.component.html",
+  styleUrls: ["./base-page.component.css"]
 })
 export class BasePageComponent implements OnInit {
   title: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.title = this.route.snapshot.data.title;
   }
-
 }

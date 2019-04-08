@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+/*Name : Rajandeep Kaur Dhaliwal
+Student ID: 300926123
+Date: April 08, 2017*/
+
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  selector: "app-footer",
+  templateUrl: "./footer.component.html",
+  styleUrls: ["./footer.component.css"]
 })
 export class FooterComponent implements OnInit {
   year: number;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     const date = new Date();

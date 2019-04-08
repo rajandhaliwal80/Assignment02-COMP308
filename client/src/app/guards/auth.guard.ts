@@ -9,6 +9,10 @@ import {
 import { Observable } from "rxjs";
 import { AuthService } from "../services/auth.service";
 
+/*Name : Rajandeep Kaur Dhaliwal
+Student ID: 300926123
+Date: April 08, 2017*/
+
 @Injectable({
   providedIn: "root"
 })

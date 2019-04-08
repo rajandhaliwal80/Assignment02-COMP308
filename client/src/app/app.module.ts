@@ -1,3 +1,7 @@
+/*Name : Rajandeep Kaur Dhaliwal
+Student ID: 300926123
+Date: April 08, 2017*/
+
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
