@@ -11,7 +11,8 @@ import { User } from "../models/user";
 export class ContactListService {
   private user: User;
   private authToken: any = null;
-  private endpoint = "https://localhost:4700/api/contact-list";
+  private endpoint =
+    "https://assignment2-rajandeep.herokuapp.com/api/contact-list";
 
   private httpOptions = {
     headers: new HttpHeaders({
