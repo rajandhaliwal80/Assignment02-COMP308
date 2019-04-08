@@ -101,7 +101,7 @@ passport.use(strategy);
 app.use('/api', indexRouter);
 app.use('/api', aboutRouter);
 app.use('/api', contactRouter);
-app.use('/api/contact-list', contactsRouter);
+app.use('/api/contact-list', passport.authenticate('jwt', {session: false}),contactsRouter);
 app.use('/api', projectRouter);
 app.use('/api', servicesRouter);
 app.get('*', (req, res) => {
